@@ -1,15 +1,14 @@
 "use client"; // This is a client component 👈🏽
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; 
+import { auth } from "../../firebase";
 import { useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import "./SignUpComp.css";
 import LoginComp from "./LoginComp";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Dashboard from "@/Pages/Dashboard/Dashboard";
-
 
 export default function SignUpComp({ handleLogin }) {
   const [email, setEmail] = useState("");
@@ -18,7 +17,7 @@ export default function SignUpComp({ handleLogin }) {
   const [hasAccount, setHasAccount] = useState(true);
   const { t, i18n } = useTranslation();
 
-const router=useRouter();
+  const router = useRouter();
   const toggleForm = () => {
     setHasAccount(!hasAccount);
   };
@@ -33,10 +32,9 @@ const router=useRouter();
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      
+
       router.push("Dashboard/Dashboard");
       console.log(router);
-    
     } catch (error) {
       console.error("sign up failed:", error.message);
       alert("this email in use ,Choose another email", error);
@@ -48,13 +46,14 @@ const router=useRouter();
       <Container>
         <Row>
           <Col lg={12} md={6}>
-            <div className="  max-w-md mx-auto  shadow-md
+            <div
+              className="  max-w-md mx-auto  shadow-md
               backdrop-blur-md bg-opacity-60
                bg-white rounded-md p-8
                 absolute top-1/2 left-1/2
                  transform -translate-x-1/2
-                  -translate-y-1/2">
-                    
+                  -translate-y-1/2"
+            >
               <h2 className="text-2xl text-black font-semibold mb-6">
                 {hasAccount ? t("Sign In") : t("Sign Up")}
               </h2>

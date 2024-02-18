@@ -1,19 +1,18 @@
-import { useState, useEffect } from 'react';
-import Logout from '@/components/Logout';
-import axios from 'axios';
-import ServerList from '@/components/ServerList';
-import { useTranslation } from 'react-i18next';
-import TranslateMenu from '@/components/TranslateMenu';
-import { Container } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import Logout from "@/components/Logout";
+import axios from "axios";
+import ServerList from "@/components/ServerList";
+import { useTranslation } from "react-i18next";
+import TranslateMenu from "@/components/TranslateMenu";
+import { Container } from "react-bootstrap";
 
-
-export default function Dashboard () {
+export default function Dashboard() {
   const [servers, setServers] = useState([]);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('/api/server');
+      const response = await axios.get("/api/server");
       console.log(response);
       const data = response.data;
       setServers(data);
@@ -23,19 +22,18 @@ export default function Dashboard () {
   }, []);
 
   return (
-    <section className='dash'>
+    <section className="dash">
+      <Container>
+        <TranslateMenu />
+        <Logout />
 
-    <Container>
-      <TranslateMenu/>
-      <Logout/>
+        <h2 style={{ textAlign: "center", fontSize: "30px" }}>
+          {" "}
+          {t("Server Status Dashboard")}
+        </h2>
 
-      <h2 style={{ textAlign: 'center',fontSize:'30px' }}> {t("Server Status Dashboard")}</h2>
-
-      <ServerList servers={servers} />
-
-    </Container>
+        <ServerList servers={servers} />
+      </Container>
     </section>
-
   );
-};
-
+}

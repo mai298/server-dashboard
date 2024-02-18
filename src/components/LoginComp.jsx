@@ -1,20 +1,18 @@
 "use client"; // This is a client component 👈🏽
 
-import React, { useState } from "react"
-import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+import React, { useState } from "react";
+import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { TextField } from "@mui/material";
-
 
 const LoginComp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
   const { t, i18n } = useTranslation();
-  const auth = getAuth(); 
-
+  const auth = getAuth();
 
   // Function to handle regular email/password login
   const handleLogin = async () => {
@@ -41,10 +39,10 @@ const LoginComp = () => {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       // Handle the signed-in user (result.user)
-      console.log('Google Sign-In successful', result.user);
+      console.log("Google Sign-In successful", result.user);
       router.replace("/Dashboard/Dashboard");
     } catch (error) {
-      console.error('Google Sign-In failed:', error.message);
+      console.error("Google Sign-In failed:", error.message);
       // Handle the error
     }
   };

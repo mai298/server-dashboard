@@ -10,6 +10,7 @@ const resources = {
   ar: {
     translation: {
       "Sign In":"تسجيل الدخول",
+      "Sign In with Google":"تسجيل الدخول باستخدام جوجل",
       "Login":"تسجيل الدخول",
       "Email":"البريد الإلكتروني",
       "Email address":"البريد الإلكتروني",
