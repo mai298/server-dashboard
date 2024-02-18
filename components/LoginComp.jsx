@@ -26,8 +26,8 @@ const LoginComp = () => {
       );
 
       console.log("Login successful", userCredential);
-      router.push("/Dashboard/Dashboard");
-    } catch (error) {
+      router.replace("/Dashboard/Dashboard");
+        } catch (error) {
       console.error("Login failed:", error.message);
       alert("invalid email or password", error);
     }
