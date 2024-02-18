@@ -31,7 +31,7 @@ export default function SignUpComp({ router, handleLogin }) {
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      router.push("/Dashboard");
+      router.push("/Dashboard/Dashboard/Dashboard");
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("this email in use ,Choose another email", error);
