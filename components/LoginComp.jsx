@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+"use client"; // This is a client component 👈🏽
+
+import React, { useState } from "react"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
-import { useRouter } from "next/navigation";
+import { auth } from "../firebase";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 const LoginComp = () => {
   const [email, setEmail] = useState("");

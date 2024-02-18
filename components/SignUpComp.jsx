@@ -1,14 +1,14 @@
 "use client"; // This is a client component 👈🏽
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; // Replace with the correct path
+import { auth } from "../firebase"; 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import "./SignUpComp.css";
-import LoginComp from "./LoginComp";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import Dashboard from "@/Pages/Dashboard/Dashboard";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import LoginComp from "./LoginComp";
 
 
 export default function SignUpComp({ handleLogin }) {
@@ -33,7 +33,9 @@ const router=useRouter();
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
+      
       router.push("Dashboard/Dashboard");
+      console.log(router);
     
     } catch (error) {
       console.error("sign up failed:", error.message);

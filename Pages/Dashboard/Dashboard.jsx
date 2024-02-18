@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import Logout from '@/components/Logout';
 import axios from 'axios';
-import ServerList from '@/components/ServerList';
 import { useTranslation } from 'react-i18next';
-import TranslateMenu from '@/components/TranslateMenu';
 import { Container } from 'react-bootstrap';
+import TranslateMenu from '../../components/TranslateMenu';
+import Logout from '../../components/Logout';
+import ServerList from '../../components/ServerList';
 
 
-const Dashboard = () => {
+export default function Dashboard () {
   const [servers, setServers] = useState([]);
   const { t, i18n } = useTranslation();
 
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
       <h2 style={{ textAlign: 'center',fontSize:'30px' }}> {t("Server Status Dashboard")}</h2>
 
-      {/* <ServerList servers={servers} /> */}
+      <ServerList servers={servers} />
 
     </Container>
     </section>
@@ -39,4 +39,3 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
