@@ -33,7 +33,7 @@ export default function SignUpComp({ router, handleLogin }) {
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      router.push("Dashboard/Dashboard");
+      router.push(src\Pages\Dashboard\Dashboard.jsx);
     
     } catch (error) {
       console.error("Login failed:", error.message);
