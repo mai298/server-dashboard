@@ -1,4 +1,3 @@
-// pages/signup.js
 import SignUpComp from '../../components/SignUpComp';
 
 const Signup = () => {

@@ -1,7 +1,7 @@
 "use client"; // This is a client component 👈🏽
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; // Replace with the correct path
+import { auth } from "../../firebase"; 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import "./SignUpComp.css";
