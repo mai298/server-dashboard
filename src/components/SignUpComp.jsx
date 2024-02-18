@@ -3,6 +3,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase"; // Replace with the correct path
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import "./SignUpComp.css";
 import LoginComp from "./LoginComp";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
@@ -31,7 +32,8 @@ export default function SignUpComp({ router, handleLogin }) {
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      router.push("/Dashboard/Dashboard/Dashboard");
+      router.push("/Dashboard/Dashboard");
+    
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("this email in use ,Choose another email", error);
