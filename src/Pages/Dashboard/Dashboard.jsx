@@ -31,7 +31,7 @@ const Dashboard = () => {
 
       <h2 style={{ textAlign: 'center',fontSize:'30px' }}> {t("Server Status Dashboard")}</h2>
 
-      <ServerList servers={servers} />
+      {/* <ServerList servers={servers} /> */}
 
     </Container>
     </section>
