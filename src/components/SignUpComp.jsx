@@ -11,14 +11,14 @@ import { useTranslation } from "react-i18next";
 import Dashboard from "@/Pages/Dashboard/Dashboard";
 
 
-export default function SignUpComp({ router, handleLogin }) {
+export default function SignUpComp({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [hasAccount, setHasAccount] = useState(true);
   const { t, i18n } = useTranslation();
 
-
+const router=useRouter();
   const toggleForm = () => {
     setHasAccount(!hasAccount);
   };
@@ -33,10 +33,10 @@ export default function SignUpComp({ router, handleLogin }) {
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      router.push(\Pages\Dashboard\Dashboard.jsx);
+      router.push("Dashboard/Dashboard");
     
     } catch (error) {
-      console.error("Login failed:", error.message);
+      console.error("sign up failed:", error.message);
       alert("this email in use ,Choose another email", error);
     }
   };
