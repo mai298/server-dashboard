@@ -8,6 +8,7 @@ import "./SignUpComp.css";
 import LoginComp from "./LoginComp";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import Dashboard from "@/Pages/Dashboard/Dashboard";
 
 
 export default function SignUpComp({ router, handleLogin }) {
@@ -32,7 +33,7 @@ export default function SignUpComp({ router, handleLogin }) {
       );
       console.log("User created successfully!", userCredential.user);
       alert("User created successfully!");
-      router.push("/mai/Mai");
+      router.push("Dashboard/Dashboard");
     
     } catch (error) {
       console.error("Login failed:", error.message);
