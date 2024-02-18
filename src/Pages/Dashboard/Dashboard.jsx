@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
+import Logout from '@/components/Logout';
 import axios from 'axios';
+import ServerList from '@/components/ServerList';
 import { useTranslation } from 'react-i18next';
+import TranslateMenu from '@/components/TranslateMenu';
 import { Container } from 'react-bootstrap';
-import TranslateMenu from '../../components/TranslateMenu';
-import Logout from '../../components/Logout';
-import ServerList from '../../components/ServerList';
 
 
 export default function Dashboard () {

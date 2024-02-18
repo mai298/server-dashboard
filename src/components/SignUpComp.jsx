@@ -1,14 +1,14 @@
 "use client"; // This is a client component 👈🏽
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; 
+import { auth } from "../../firebase"; // Replace with the correct path
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import "./SignUpComp.css";
+import LoginComp from "./LoginComp";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import Dashboard from "../Pages/Dashboard/Dashboard";
-import LoginComp from "./LoginComp";
+import Dashboard from "@/Pages/Dashboard/Dashboard";
 
 
 export default function SignUpComp({ handleLogin }) {
@@ -74,7 +74,6 @@ const router=useRouter();
                       <Form.Control
                         placeholder={t("Username")}
                         aria-label="Username"
-                        id="name"
                         value={name}
                         className="mt-1 p-2 w-full border rounded-md"
                         onChange={(e) => setName(e.target.value)}
@@ -88,7 +87,6 @@ const router=useRouter();
                       <Form.Control
                         type="email"
                         placeholder={t("Enter email")}
-                        id="email"
                         name="email"
                         className="mt-1 p-2 w-full border rounded-md"
                         onChange={(e) => setEmail(e.target.value)}
@@ -100,7 +98,6 @@ const router=useRouter();
                       </Form.Label>
                       <Form.Control
                         type="password"
-                        id="password"
                         name="password"
                         className="mt-1 p-2 w-full border rounded-md"
                         onChange={(e) => setPassword(e.target.value)}

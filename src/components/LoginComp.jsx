@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
@@ -27,7 +27,7 @@ const LoginComp = () => {
 
       console.log("Login successful", userCredential);
       router.replace("/Dashboard/Dashboard");
-        } catch (error) {
+    } catch (error) {
       console.error("Login failed:", error.message);
       alert("invalid email or password", error);
     }

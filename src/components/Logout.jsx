@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 import { useRouter } from 'next/navigation';
 import { FiLogOut } from "react-icons/fi";
 import { Button } from 'react-bootstrap';
